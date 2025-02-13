@@ -73,6 +73,15 @@ importers:
       '@fal-ai/client':
         specifier: 1.2.0
         version: 1.2.0
+      '@lifi/types':
+        specifier: 16.3.0
+        version: 16.3.0
+      '@pinata/sdk':
+        specifier: ^2.1.0
+        version: 2.1.0
+      '@story-protocol/core-sdk':
+        specifier: 1.3.0-beta.3
+        version: 1.3.0-beta.3(bufferutil@4.0.9)(typescript@5.5.3)(utf-8-validate@5.0.10)(zod@3.24.1)
       '@tavily/core':
         specifier: 0.0.2
         version: 0.0.2
@@ -130,6 +139,9 @@ importers:
       pg:
         specifier: 8.13.1
         version: 8.13.1
+      pinata-web3:
+        specifier: ^0.5.4
+        version: 0.5.4
       readline:
         specifier: 1.3.0
         version: 1.3.0
@@ -972,6 +984,18 @@ packages:
     resolution:
       {
         integrity: sha512-gAmrUZSGtKc3AiBL71iNWxDsyUC5uMaKKGdvzYsBoTW/xi42JQHl7eKV2OYzCUqvc+D2RCcf7EXY2iCyFIk6og==,
+      }
+
+  '@chainsafe/is-ip@2.1.0':
+    resolution:
+      {
+        integrity: sha512-KIjt+6IfysQ4GCv66xihEitBjvhU/bixbbbFxdJ1sqCp4uJ0wuZiYBPhksZoy4lfaF0k9cwNzY5upEW/VWdw3w==,
+      }
+
+  '@chainsafe/netmask@2.0.0':
+    resolution:
+      {
+        integrity: sha512-I3Z+6SWUoaljh3TBzCnCxjlUyN8tA+NAk5L6m9IxvCf1BENQTePzPMis97CoN/iMW1St3WN+AWCCRp+TTBRiDg==,
       }
 
   '@cks-systems/manifest-sdk@0.1.59':
@@ -2691,6 +2715,18 @@ packages:
         integrity: sha512-ExDoj1QV5eC6TEbMdLUMMk9cfvNKhhv5gXol4SmULRVCx/3iyCPhJ74nsb3S0Vb+/f+XujBEj3vQn5+cwS0fNA==,
       }
 
+  '@leichtgewicht/ip-codec@2.0.5':
+    resolution:
+      {
+        integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==,
+      }
+
+  '@lifi/types@16.3.0':
+    resolution:
+      {
+        integrity: sha512-rYMdXRdNOyJb5tI5CXfqxU4k62GiJrElx0DEZ8ZRFYFtljg69X6hrMKER1wVWkRpcB67Ca8SKebLnufy7qCaTw==,
+      }
+
   '@lightprotocol/compressed-token@0.17.1':
     resolution:
       {
@@ -3070,6 +3106,24 @@ packages:
         integrity: sha512-LZYWBmrkKO0quyjnJCeSaqHOcsuZUvE+hlIYRqFc0qI27dLnsOdnv8Fsj2cyitzQTJZmCPm53vZ/P8QTH7E84A==,
       }
     engines: { node: '>= 18' }
+
+  '@multiformats/dns@1.0.6':
+    resolution:
+      {
+        integrity: sha512-nt/5UqjMPtyvkG9BQYdJ4GfLK3nMqGpFZOzf4hAmIa0sJh2LlS9YKXZ4FgwBDsaHvzZqR/rUFIywIc7pkHNNuw==,
+      }
+
+  '@multiformats/mafmt@12.1.6':
+    resolution:
+      {
+        integrity: sha512-tlJRfL21X+AKn9b5i5VnaTD6bNttpSpcqwKVmDmSHLwxoz97fAHaepqFOk/l1fIu94nImIXneNbhsJx/RQNIww==,
+      }
+
+  '@multiformats/multiaddr@12.3.5':
+    resolution:
+      {
+        integrity: sha512-f3I7FDd6VM4s3X5dXbmwk8Y99pnvATWj7RorIr+qgeiYCDySp4cwybAFnxdRWeKs6XLPE9meB0p8tK4lQqO8gQ==,
+      }
 
   '@near-js/crypto@0.0.3':
     resolution:
@@ -3603,6 +3657,13 @@ packages:
         integrity: sha512-/+8S6XpAnN9X6pCiA7eBD+QtEWOtYhlN7Osrf9K59G6E8q6SdXUbJzuNpNBHtlZV+Pm7zm4zOhnwnpvShLD0Xg==,
       }
     engines: { node: '>=18.0.0' }
+
+  '@pinata/sdk@2.1.0':
+    resolution:
+      {
+        integrity: sha512-hkS0tcKtsjf9xhsEBs2Nbey5s+Db7x5rlOH9TaWHBXkJ7IwwOs2xnEDigNaxAHKjYAwcw+m2hzpO5QgOfeF7Zw==,
+      }
+    deprecated: Please install the new IPFS SDK at pinata-web3. More information at https://docs.pinata.cloud/web3/sdk
 
   '@pkgjs/parseargs@0.11.0':
     resolution:
@@ -5086,6 +5147,12 @@ packages:
         integrity: sha512-1VtCqX4AHWJlRRSYGSn+4X1mqolI1Tdq62IwzoU2vUuEE72S1OlEeGhpvd6XsdqXcfHmVzYfj8k1XtKBQqwo9w==,
       }
 
+  '@story-protocol/core-sdk@1.3.0-beta.3':
+    resolution:
+      {
+        integrity: sha512-Rl8Dt+y+s9waytcWS4WL6k2tflRoxB5m0susFKieCop87yn+CvLMwhfcJ99IHLj+DXhslv/K3DCgaM/DGcII1g==,
+      }
+
   '@supercharge/promise-pool@3.2.0':
     resolution:
       {
@@ -5264,6 +5331,12 @@ packages:
     resolution:
       {
         integrity: sha512-xFdR6tkm0MWvBfO8xXCSsinYxHcqkQUlcHeSpMC2ukzOb6lwQAfDmW+Qt0AvlGd8HpsS28qKsB+oPeJn9I39jg==,
+      }
+
+  '@types/dns-packet@5.6.5':
+    resolution:
+      {
+        integrity: sha512-qXOC7XLOEe43ehtWJCMnQXvgcIpv6rPmQ1jXT98Ad8A3TB1Ue50jsCbSSSyuazScEuZ/Q026vHbrOTVkmwA+7Q==,
       }
 
   '@types/estree@1.0.6':
@@ -5865,6 +5938,20 @@ packages:
       }
     hasBin: true
 
+  abitype@0.10.3:
+    resolution:
+      {
+        integrity: sha512-tRN+7XIa7J9xugdbRzFv/95ka5ivR/sRe01eiWvM0HWWjHuigSZEACgKa0sj4wGuekTDtghCx+5Izk/cOi78pQ==,
+      }
+    peerDependencies:
+      typescript: '>=5.0.4'
+      zod: ^3 >=3.22.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+      zod:
+        optional: true
+
   abitype@1.0.8:
     resolution:
       {
@@ -6376,6 +6463,12 @@ packages:
     resolution:
       {
         integrity: sha512-8PJDLJv7qTTMMwdnbMvrLYuvB47M81wRtxQmEdV5w4rgbTXTt+vtPkXwajOfOdSyv/wZICJOC+/UhXH4aQ/R+w==,
+      }
+
+  axios@0.21.4:
+    resolution:
+      {
+        integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==,
       }
 
   axios@0.27.2:
@@ -7042,12 +7135,34 @@ packages:
       }
     engines: { node: '>=8' }
 
+  cids@0.7.5:
+    resolution:
+      {
+        integrity: sha512-zT7mPeghoWAu+ppn8+BS1tQ5qGmbMfB4AregnQjA/qHY3GC1m1ptI9GkWNlgeu38r7CuRdXB47uY2XgAYt6QVA==,
+      }
+    engines: { node: '>=4.0.0', npm: '>=3.0.0' }
+    deprecated: This module has been superseded by the multiformats module
+
+  cids@0.8.3:
+    resolution:
+      {
+        integrity: sha512-yoXTbV3llpm+EBGWKeL9xKtksPE/s6DPoDSY4fn8I8TEW1zehWXPSB0pwAXVDlLaOlrw+sNynj995uD9abmPhA==,
+      }
+    engines: { node: '>=4.0.0', npm: '>=3.0.0' }
+    deprecated: This module has been superseded by the multiformats module
+
   cipher-base@1.0.6:
     resolution:
       {
         integrity: sha512-3Ek9H3X6pj5TgenXYtNWdaBon1tgYCaebd+XPg0keyjEbEfkD4KkmAxkQ/i1vYvxdcT5nscLBfq9VJRmCBcFSw==,
       }
     engines: { node: '>= 0.10' }
+
+  class-is@1.1.0:
+    resolution:
+      {
+        integrity: sha512-rhjH9AG1fvabIDoGRVH587413LPjTZgmDF9fOFCbFJQV4yuocX1mHxxvXI4g3cGwbVY9wAYIoKlg1N79frJKQw==,
+      }
 
   cldr-segmentation@2.2.1:
     resolution:
@@ -7870,6 +7985,13 @@ packages:
         integrity: sha512-EPCWE9OkA9DnFFNrO7Kl1WHHDYFXu3CNVFJg63bfU7hVtjZGyhShwZtSBImINQRWxWP2tgo2XI+QhdXx28r0aA==,
       }
     engines: { node: '>=18' }
+
+  dns-packet@5.6.1:
+    resolution:
+      {
+        integrity: sha512-l4gcSouhcgIKRvyy99RNVOgxXiicE+2jZoNmaNmZ6JXiGajBOJAesk1OBlJuM5k2c+eudGdLxDqXuPCKIj6kpw==,
+      }
+    engines: { node: '>=6' }
 
   dom-serializer@2.0.0:
     resolution:
@@ -9352,6 +9474,12 @@ packages:
         integrity: sha512-taOaskGt4z4SOANNseOviYDvjEJinIkRgmp7LbKP2YTTmVxWBl87s/uzK9r+44BclBSp2X7K1hqeNfz9JbBeXA==,
       }
 
+  hashlru@2.3.0:
+    resolution:
+      {
+        integrity: sha512-0cMsjjIC8I+D3M44pOQdsy0OHXGLVz6Z0beRuufhKa0KfaD2wGwAev6jILzXsd3/vpnNQJmWyZtIILqM1N+n5A==,
+      }
+
   hasown@2.0.2:
     resolution:
       {
@@ -9640,6 +9768,13 @@ packages:
       }
     engines: { node: '>= 12' }
 
+  ip-regex@4.3.0:
+    resolution:
+      {
+        integrity: sha512-B9ZWJxHHOHUhUjCPrMpLD4xEq35bUTClHM1S6CBU5ixQnkZmwipwgc96vAd7AAGM9TGHvJR+Uss+/Ak6UphK+Q==,
+      }
+    engines: { node: '>=8' }
+
   ipaddr.js@1.9.1:
     resolution:
       {
@@ -9776,6 +9911,26 @@ packages:
         integrity: sha512-qP1vozQRI+BMOPcjFzrjXuQvdak2pHNUMZoeG2eRbiSqyvbEf/wQtEOTOX1guk6E3t36RkaqiSt8A/6YElNxLQ==,
       }
     engines: { node: '>=12' }
+
+  is-ip@3.1.0:
+    resolution:
+      {
+        integrity: sha512-35vd5necO7IitFPjd/YBeqwWnyDWbuLH9ZXQdMfDA8TEo7pv5X8yfrvVO3xbJbLUlERCMvf6X0hTUamQxCYJ9Q==,
+      }
+    engines: { node: '>=8' }
+
+  is-ipfs@0.6.3:
+    resolution:
+      {
+        integrity: sha512-HyRot1dvLcxImtDqPxAaY1miO6WsiP/z7Yxpg2qpaLWv5UdhAPtLvHJ4kMLM0w8GSl8AFsVF23PHe1LzuWrUlQ==,
+      }
+
+  is-ipfs@8.0.4:
+    resolution:
+      {
+        integrity: sha512-upkO6a8WgBSZMMmuPzmF2NQLWXtiJtHxdEfEiMWrOzCKoZ+XEiM0XlK4fFMfo/PyiRmPMJ4PsNrXyvJeqMrJXA==,
+      }
+    engines: { node: '>=16.0.0', npm: '>=7.0.0' }
 
   is-nan@1.3.2:
     resolution:
@@ -9922,6 +10077,13 @@ packages:
         integrity: sha512-LpB/54B+/2J5hqQ7imZHfdU31OlgQqx7ZicVlkm9kzg9/w8GKLEcFfJl/t7DCEDueOyBAD6zCCwTO6Fzs0NoEQ==,
       }
     engines: { node: '>=16' }
+
+  iso-url@1.2.1:
+    resolution:
+      {
+        integrity: sha512-9JPDgCN4B7QPkLtYAAOrEuAWvP9rWvR5offAr0/SeF046wIkglqH3VXgYYP6NcsKslH80UIVgmPqNe3j7tG2ng==,
+      }
+    engines: { node: '>=12' }
 
   isobject@3.0.1:
     resolution:
@@ -10688,6 +10850,12 @@ packages:
         integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==,
       }
 
+  mafmt@7.1.0:
+    resolution:
+      {
+        integrity: sha512-vpeo9S+hepT3k2h5iFxzEHvvR0GPBx9uKaErmnRzYNcaKb03DgOArjEMlgG4a9LcuZZ89a3I8xbeto487n26eA==,
+      }
+
   magic-bytes.js@1.10.0:
     resolution:
       {
@@ -11166,6 +11334,67 @@ packages:
       {
         integrity: sha512-uQzynjVJ8F7x5wjaK0g4Ybhy2TvO/pk96+YHyS5g1W4GuUEV6HMebZ8HcRwWgKIRCUT2MLbM5uCKwYcAqkS+8Q==,
       }
+
+  multiaddr@7.5.0:
+    resolution:
+      {
+        integrity: sha512-GvhHsIGDULh06jyb6ev+VfREH9evJCFIRnh3jUt9iEZ6XDbyoisZRFEI9bMvK/AiR6y66y6P+eoBw9mBYMhMvw==,
+      }
+    deprecated: This module is deprecated, please upgrade to @multiformats/multiaddr
+
+  multibase@0.6.1:
+    resolution:
+      {
+        integrity: sha512-pFfAwyTjbbQgNc3G7D48JkJxWtoJoBMaR4xQUOuB8RnCgRqaYmWNFeJTTvrJ2w51bjLq2zTby6Rqj9TQ9elSUw==,
+      }
+    deprecated: This module has been superseded by the multiformats module
+
+  multibase@0.7.0:
+    resolution:
+      {
+        integrity: sha512-TW8q03O0f6PNFTQDvh3xxH03c8CjGaaYrjkl9UQPG6rz53TQzzxJVCIWVjzcbN/Q5Y53Zd0IBQBMVktVgNx4Fg==,
+      }
+    deprecated: This module has been superseded by the multiformats module
+
+  multibase@1.0.1:
+    resolution:
+      {
+        integrity: sha512-KcCxpBVY8fdVKu4dJMAahq4F/2Z/9xqEjIiR7PiMe7LRGeorFn2NLmicN6nLBCqQvft6MG2Lc9X5P0IdyvnxEw==,
+      }
+    engines: { node: '>=10.0.0', npm: '>=6.0.0' }
+    deprecated: This module has been superseded by the multiformats module
+
+  multicodec@1.0.4:
+    resolution:
+      {
+        integrity: sha512-NDd7FeS3QamVtbgfvu5h7fd1IlbaC4EQ0/pgU4zqE2vdHCmBGsUa0TiM8/TdSeG6BMPC92OOCf8F1ocE/Wkrrg==,
+      }
+    deprecated: This module has been superseded by the multiformats module
+
+  multiformats@13.3.2:
+    resolution:
+      {
+        integrity: sha512-qbB0CQDt3QKfiAzZ5ZYjLFOs+zW43vA4uyM8g27PeEuXZybUOFyjrVdP93HPBHMoglibwfkdVwbzfUq8qGcH6g==,
+      }
+
+  multiformats@9.9.0:
+    resolution:
+      {
+        integrity: sha512-HoMUjhH9T8DDBNT+6xzkrd9ga/XiBI4xLr58LJACwK6G3HTOPeMz4nB4KJs33L2BelrIJa7P0VuNaVF3hMYfjg==,
+      }
+
+  multihashes@0.4.21:
+    resolution:
+      {
+        integrity: sha512-uVSvmeCWf36pU2nB4/1kzYZjsXD9vofZKpgudqkceYY5g2aZZXJ5r9lxuzoRLl1OAp28XljXsEJ/X/85ZsKmKw==,
+      }
+
+  multihashes@1.0.1:
+    resolution:
+      {
+        integrity: sha512-S27Tepg4i8atNiFaU5ZOm3+gl3KQlUanLs/jWcBxQHFttgq+5x1OgbQmf2d8axJ/48zYGBd/wT9d723USMFduw==,
+      }
+    engines: { node: '>=10.0.0', npm: '>=6.0.0' }
 
   multistream@4.1.0:
     resolution:
@@ -11791,6 +12020,13 @@ packages:
       }
     engines: { node: '>=8' }
 
+  p-queue@8.1.0:
+    resolution:
+      {
+        integrity: sha512-mxLDbbGIBEXTJL0zEx8JIylaj3xQ7Z/7eEVjcF9fJX4DBiH9oqe+oahYnlKKxm0Ci9TlWTyhSHgygxMxjIB2jw==,
+      }
+    engines: { node: '>=18' }
+
   p-retry@4.6.2:
     resolution:
       {
@@ -11811,6 +12047,13 @@ packages:
         integrity: sha512-+/wmHtzJuWii1sXn3HCuH/FTwGhrp4tmJTxSKJbfS+vkipci6osxXM5mY0jUiRzWKMTgUT8l7HFbeSwZAynqHw==,
       }
     engines: { node: '>=10' }
+
+  p-timeout@6.1.4:
+    resolution:
+      {
+        integrity: sha512-MyIV3ZA/PmyBN/ud8vV9XzwTrNtR4jFrObymZYnZqMmW0zA8Z17vnT0rBgFE/TlohB+YCHqXMgZzb3Csp49vqg==,
+      }
+    engines: { node: '>=14.16' }
 
   pac-proxy-agent@7.1.0:
     resolution:
@@ -12174,6 +12417,12 @@ packages:
       }
     engines: { node: '>=10' }
 
+  pinata-web3@0.5.4:
+    resolution:
+      {
+        integrity: sha512-w98wheqt+2LRzNgU5+xZaPP3JZA8Cp33O647zU6AF0zYk15py9ti8g2Bl/7rwXyua3CN+EzHgzcu1wgKnhSZ8w==,
+      }
+
   pino-abstract-transport@2.0.0:
     resolution:
       {
@@ -12498,6 +12747,12 @@ packages:
         integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==,
       }
     engines: { node: '>= 0.6.0' }
+
+  progress-events@1.0.1:
+    resolution:
+      {
+        integrity: sha512-MOzLIwhpt64KIVN64h1MwdKWiyKFNc/S6BoYKPIVUHFg0/eIEyBulhWCgn678v/4c0ri3FdGuzXymNCv02MUIw==,
+      }
 
   progress@2.0.3:
     resolution:
@@ -14572,6 +14827,24 @@ packages:
     engines: { node: '>=0.8.0' }
     hasBin: true
 
+  uint8-varint@2.0.4:
+    resolution:
+      {
+        integrity: sha512-FwpTa7ZGA/f/EssWAb5/YV6pHgVF1fViKdW8cWaEarjB8t7NyofSWBdOTyFPaGuUG4gx3v1O3PQ8etsiOs3lcw==,
+      }
+
+  uint8arraylist@2.4.8:
+    resolution:
+      {
+        integrity: sha512-vc1PlGOzglLF0eae1M8mLRTBivsvrGsdmJ5RbK3e+QRvRLOZfZhQROTwH/OfyF3+ZVUg9/8hE8bmKP2CvP9quQ==,
+      }
+
+  uint8arrays@5.1.0:
+    resolution:
+      {
+        integrity: sha512-vA6nFepEmlSKkMBnLBaUMVvAC4G3CTmO58C12y4sq6WPDOR7mOFYOi7GlrQ4djeSbP6JG9Pv9tJDM97PedRSww==,
+      }
+
   unbzip2-stream@1.4.3:
     resolution:
       {
@@ -14859,6 +15132,12 @@ packages:
         integrity: sha512-OljLrQ9SQdOUqTaQxqL5dEfZWrXExyyWsozYlAWFawPVNuD83igl7uJD2RTkNMbniIYgt8l81eCJGIdQF7avLQ==,
       }
     engines: { node: ^14.17.0 || ^16.13.0 || >=18.0.0 }
+
+  varint@5.0.2:
+    resolution:
+      {
+        integrity: sha512-lKxKYG6H03yCZUpAGOPOsMcGxd1RHCu1iKvEHYDPmTyq2HueGhD73ssNBqqQWfvYs04G9iUFRvmAVLW20Jw6ow==,
+      }
 
   vary@1.1.2:
     resolution:
@@ -16615,6 +16894,12 @@ snapshots:
       '@soncodi/signal': 2.0.7
 
   '@cfworker/json-schema@4.1.1': {}
+
+  '@chainsafe/is-ip@2.1.0': {}
+
+  '@chainsafe/netmask@2.0.0':
+    dependencies:
+      '@chainsafe/is-ip': 2.1.0
 
   '@cks-systems/manifest-sdk@0.1.59(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.5.3)(utf-8-validate@5.0.10)':
     dependencies:
@@ -18919,7 +19204,7 @@ snapshots:
   '@langchain/openai@0.3.17(@langchain/core@0.3.37(openai@4.82.0(ws@8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@3.24.1)))(ws@8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
     dependencies:
       '@langchain/core': 0.3.37(openai@4.73.0(zod@3.24.1))
-      js-tiktoken: 1.0.15
+      js-tiktoken: 1.0.18
       openai: 4.82.0(ws@8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@3.24.1)
       zod: 3.24.1
       zod-to-json-schema: 3.24.1(zod@3.24.1)
@@ -18930,7 +19215,7 @@ snapshots:
   '@langchain/textsplitters@0.1.0(@langchain/core@0.3.37(openai@4.82.0(ws@8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@3.24.1)))':
     dependencies:
       '@langchain/core': 0.3.37(openai@4.73.0(zod@3.24.1))
-      js-tiktoken: 1.0.15
+      js-tiktoken: 1.0.18
 
   '@ledgerhq/devices@6.27.1':
     dependencies:
@@ -18994,6 +19279,10 @@ snapshots:
       events: 3.3.0
 
   '@ledgerhq/logs@6.12.0': {}
+
+  '@leichtgewicht/ip-codec@2.0.5': {}
+
+  '@lifi/types@16.3.0': {}
 
   '@lightprotocol/compressed-token@0.17.1(@lightprotocol/stateless.js@0.17.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.5.3)(utf-8-validate@5.0.10)':
     dependencies:
@@ -19606,6 +19895,29 @@ snapshots:
 
   '@msgpack/msgpack@3.0.0-beta3': {}
 
+  '@multiformats/dns@1.0.6':
+    dependencies:
+      '@types/dns-packet': 5.6.5
+      buffer: 6.0.3
+      dns-packet: 5.6.1
+      hashlru: 2.3.0
+      p-queue: 8.1.0
+      progress-events: 1.0.1
+      uint8arrays: 5.1.0
+
+  '@multiformats/mafmt@12.1.6':
+    dependencies:
+      '@multiformats/multiaddr': 12.3.5
+
+  '@multiformats/multiaddr@12.3.5':
+    dependencies:
+      '@chainsafe/is-ip': 2.1.0
+      '@chainsafe/netmask': 2.0.0
+      '@multiformats/dns': 1.0.6
+      multiformats: 13.3.2
+      uint8-varint: 2.0.4
+      uint8arrays: 5.1.0
+
   '@near-js/crypto@0.0.3':
     dependencies:
       '@near-js/types': 0.0.3
@@ -20003,6 +20315,15 @@ snapshots:
       - typescript
       - utf-8-validate
       - zod
+
+  '@pinata/sdk@2.1.0':
+    dependencies:
+      axios: 0.21.4
+      form-data: 2.3.3
+      is-ipfs: 0.6.3
+      path: 0.12.7
+    transitivePeerDependencies:
+      - debug
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -21634,6 +21955,21 @@ snapshots:
 
   '@starknet-io/types-js@0.7.10': {}
 
+  '@story-protocol/core-sdk@1.3.0-beta.3(bufferutil@4.0.9)(typescript@5.5.3)(utf-8-validate@5.0.10)(zod@3.24.1)':
+    dependencies:
+      abitype: 0.10.3(typescript@5.5.3)(zod@3.24.1)
+      axios: 1.7.9
+      bs58: 6.0.0
+      dotenv: 16.4.7
+      multiformats: 9.9.0
+      viem: 2.22.21(bufferutil@4.0.9)(typescript@5.5.3)(utf-8-validate@5.0.10)(zod@3.24.1)
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - typescript
+      - utf-8-validate
+      - zod
+
   '@supercharge/promise-pool@3.2.0': {}
 
   '@swc/helpers@0.5.15':
@@ -21825,6 +22161,10 @@ snapshots:
       '@types/ms': 2.1.0
 
   '@types/diff-match-patch@1.0.36': {}
+
+  '@types/dns-packet@5.6.5':
+    dependencies:
+      '@types/node': 22.13.1
 
   '@types/estree@1.0.6': {}
 
@@ -22267,6 +22607,11 @@ snapshots:
       fs-extra: 10.1.0
       yargs: 17.7.2
 
+  abitype@0.10.3(typescript@5.5.3)(zod@3.24.1):
+    optionalDependencies:
+      typescript: 5.5.3
+      zod: 3.24.1
+
   abitype@1.0.8(typescript@5.5.3)(zod@3.24.1):
     optionalDependencies:
       typescript: 5.5.3
@@ -22674,6 +23019,12 @@ snapshots:
       '@babel/runtime': 7.26.7
       is-retry-allowed: 2.2.0
 
+  axios@0.21.4:
+    dependencies:
+      follow-redirects: 1.15.9(debug@4.3.4)
+    transitivePeerDependencies:
+      - debug
+
   axios@0.27.2:
     dependencies:
       follow-redirects: 1.15.9(debug@4.3.4)
@@ -23080,10 +23431,28 @@ snapshots:
 
   ci-info@4.1.0: {}
 
+  cids@0.7.5:
+    dependencies:
+      buffer: 5.7.1
+      class-is: 1.1.0
+      multibase: 0.6.1
+      multicodec: 1.0.4
+      multihashes: 0.4.21
+
+  cids@0.8.3:
+    dependencies:
+      buffer: 5.7.1
+      class-is: 1.1.0
+      multibase: 1.0.1
+      multicodec: 1.0.4
+      multihashes: 1.0.1
+
   cipher-base@1.0.6:
     dependencies:
       inherits: 2.0.4
       safe-buffer: 5.2.1
+
+  class-is@1.1.0: {}
 
   cldr-segmentation@2.2.1:
     dependencies:
@@ -23509,6 +23878,10 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+
+  dns-packet@5.6.1:
+    dependencies:
+      '@leichtgewicht/ip-codec': 2.0.5
 
   dom-serializer@2.0.0:
     dependencies:
@@ -24675,6 +25048,8 @@ snapshots:
       inherits: 2.0.4
       minimalistic-assert: 1.0.1
 
+  hashlru@2.3.0: {}
+
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
@@ -24872,6 +25247,8 @@ snapshots:
       jsbn: 1.1.0
       sprintf-js: 1.1.3
 
+  ip-regex@4.3.0: {}
+
   ipaddr.js@1.9.1: {}
 
   ipaddr.js@2.2.0: {}
@@ -24950,6 +25327,27 @@ snapshots:
 
   is-interactive@2.0.0: {}
 
+  is-ip@3.1.0:
+    dependencies:
+      ip-regex: 4.3.0
+
+  is-ipfs@0.6.3:
+    dependencies:
+      bs58: 4.0.1
+      cids: 0.7.5
+      mafmt: 7.1.0
+      multiaddr: 7.5.0
+      multibase: 0.6.1
+      multihashes: 0.4.21
+
+  is-ipfs@8.0.4:
+    dependencies:
+      '@multiformats/mafmt': 12.1.6
+      '@multiformats/multiaddr': 12.3.5
+      iso-url: 1.2.1
+      multiformats: 13.3.2
+      uint8arrays: 5.1.0
+
   is-nan@1.3.2:
     dependencies:
       call-bind: 1.0.8
@@ -25007,6 +25405,8 @@ snapshots:
   isexe@2.0.0: {}
 
   isexe@3.1.1: {}
+
+  iso-url@1.2.1: {}
 
   isobject@3.0.1: {}
 
@@ -25291,7 +25691,7 @@ snapshots:
       '@langchain/core': 0.3.37(openai@4.73.0(zod@3.24.1))
       '@langchain/openai': 0.3.17(@langchain/core@0.3.37(openai@4.82.0(ws@8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@3.24.1)))(ws@8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))
       '@langchain/textsplitters': 0.1.0(@langchain/core@0.3.37(openai@4.82.0(ws@8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@3.24.1)))
-      js-tiktoken: 1.0.15
+      js-tiktoken: 1.0.18
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
       langsmith: 0.2.15(openai@4.73.0(zod@3.24.1))
@@ -25460,6 +25860,10 @@ snapshots:
       es5-ext: 0.10.64
 
   lunr@2.3.9: {}
+
+  mafmt@7.1.0:
+    dependencies:
+      multiaddr: 7.5.0
 
   magic-bytes.js@1.10.0: {}
 
@@ -25725,6 +26129,51 @@ snapshots:
       xtend: 4.0.2
 
   multi-integer-range@3.0.0: {}
+
+  multiaddr@7.5.0:
+    dependencies:
+      buffer: 5.7.1
+      cids: 0.8.3
+      class-is: 1.1.0
+      is-ip: 3.1.0
+      multibase: 0.7.0
+      varint: 5.0.2
+
+  multibase@0.6.1:
+    dependencies:
+      base-x: 3.0.10
+      buffer: 5.7.1
+
+  multibase@0.7.0:
+    dependencies:
+      base-x: 3.0.10
+      buffer: 5.7.1
+
+  multibase@1.0.1:
+    dependencies:
+      base-x: 3.0.10
+      buffer: 5.7.1
+
+  multicodec@1.0.4:
+    dependencies:
+      buffer: 5.7.1
+      varint: 5.0.2
+
+  multiformats@13.3.2: {}
+
+  multiformats@9.9.0: {}
+
+  multihashes@0.4.21:
+    dependencies:
+      buffer: 5.7.1
+      multibase: 0.7.0
+      varint: 5.0.2
+
+  multihashes@1.0.1:
+    dependencies:
+      buffer: 5.7.1
+      multibase: 1.0.1
+      varint: 5.0.2
 
   multistream@4.1.0:
     dependencies:
@@ -26165,6 +26614,11 @@ snapshots:
       eventemitter3: 4.0.7
       p-timeout: 3.2.0
 
+  p-queue@8.1.0:
+    dependencies:
+      eventemitter3: 5.0.1
+      p-timeout: 6.1.4
+
   p-retry@4.6.2:
     dependencies:
       '@types/retry': 0.12.0
@@ -26175,6 +26629,8 @@ snapshots:
       p-finally: 1.0.0
 
   p-timeout@4.1.0: {}
+
+  p-timeout@6.1.4: {}
 
   pac-proxy-agent@7.1.0:
     dependencies:
@@ -26370,6 +26826,15 @@ snapshots:
   pidusage@3.0.2:
     dependencies:
       safe-buffer: 5.2.1
+
+  pinata-web3@0.5.4:
+    dependencies:
+      axios: 1.7.9
+      form-data: 4.0.1
+      is-ipfs: 8.0.4
+      node-fetch: 3.3.2
+    transitivePeerDependencies:
+      - debug
 
   pino-abstract-transport@2.0.0:
     dependencies:
@@ -26588,6 +27053,8 @@ snapshots:
   process-warning@4.0.1: {}
 
   process@0.11.10: {}
+
+  progress-events@1.0.1: {}
 
   progress@2.0.3: {}
 
@@ -28082,6 +28549,19 @@ snapshots:
   uglify-js@3.19.3:
     optional: true
 
+  uint8-varint@2.0.4:
+    dependencies:
+      uint8arraylist: 2.4.8
+      uint8arrays: 5.1.0
+
+  uint8arraylist@2.4.8:
+    dependencies:
+      uint8arrays: 5.1.0
+
+  uint8arrays@5.1.0:
+    dependencies:
+      multiformats: 13.3.2
+
   unbzip2-stream@1.4.3:
     dependencies:
       buffer: 5.7.1
@@ -28225,6 +28705,8 @@ snapshots:
       spdx-expression-parse: 3.0.1
 
   validate-npm-package-name@5.0.1: {}
+
+  varint@5.0.2: {}
 
   vary@1.1.2: {}
 

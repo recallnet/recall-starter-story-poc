@@ -9,7 +9,10 @@ import {
 } from '../../../../js-recall/packages/sdk/dist/index.js'; // to replace with import from recall-sdk
 import { elizaLogger, UUID, Service, ServiceType } from '@elizaos/core';
 import { parseEther } from 'viem';
+import { createHash } from 'crypto';
 import { ICotAgentRuntime } from '../../types/index.ts';
+import { mintSpgWithPilTerms } from '../../story/simpleMintAndRegisterSpg.ts';
+import { create } from 'domain';
 
 type Address = `0x${string}`;
 type AccountInfo = {
@@ -146,6 +149,45 @@ export class RecallService extends Service {
   }
 
   /**
+   * Registers a batch of logs as IP using Story Protocol
+   * @param batchKey The key where the batch was stored
+   * @param batchData The actual batch data
+   * @returns The IP registration response
+   */
+  private async registerBatchAsIP(
+    bucketAddress: Address,
+    batchKey: string,
+    batchData: string,
+    timestamp: number,
+  ): Promise<void> {
+    try {
+      const isoTimestamp = new Date(timestamp).toISOString();
+      const contentHash = createHash('sha256').update(batchData).digest('hex');
+
+      const ipMetadata = {
+        title: `Recall Batch ${batchKey}`,
+        description: `Chain of Thought log batch stored at ${isoTimestamp}`,
+        ipType: 'LOG_BATCH',
+        createdAt: isoTimestamp,
+        tags: ['recall', 'logs', 'chain-of-thought'],
+        additionalProperties: {
+          batchKey,
+          bucketAddress,
+          logCount: batchData.split('\n').length,
+          storageTimestamp: timestamp,
+          contentHash: `0x${contentHash}`,
+        },
+      };
+
+      const response = await mintSpgWithPilTerms(ipMetadata);
+      elizaLogger.info(`Successfully registered batch ${batchKey} as IP with ID: ${response.ipId}`);
+    } catch (error) {
+      elizaLogger.error(`Failed to register batch as IP: ${error.message}`);
+      // Note: We don't throw here as IP registration failure shouldn't invalidate the batch storage
+    }
+  }
+
+  /**
    * Gets or creates a log bucket in Recall.
    * @param bucketAlias The alias of the bucket to retrieve or create.
    * @returns The address of the log bucket.
@@ -257,6 +299,7 @@ export class RecallService extends Service {
       }
 
       elizaLogger.info(`Successfully stored batch at key: ${addObject.result.key}`);
+      await this.registerBatchAsIP(bucketAddress, nextLogKey, batchData, timestamp);
       return nextLogKey;
     } catch (error) {
       if (error.message.includes('timed out')) {
