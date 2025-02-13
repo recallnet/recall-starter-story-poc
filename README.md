@@ -144,6 +144,9 @@ RECALL_PRIVATE_KEY="your-private-key"
 RECALL_BUCKET_ALIAS="your-default-bucket"
 COT_LOG_PREFIX="cot/"
 OPENAI_API_KEY="your-api-key"
+# For Story Protocol
+STORY_PRIVATE_KEY=
+PINATA_JWT=
 ```
 
 ### **2️⃣ Install Dependencies and Start the Server**
