@@ -12,7 +12,6 @@ import { parseEther } from 'viem';
 import { createHash } from 'crypto';
 import { ICotAgentRuntime } from '../../types/index.ts';
 import { mintSpgWithPilTerms } from '../../story/simpleMintAndRegisterSpg.ts';
-import { create } from 'domain';
 
 type Address = `0x${string}`;
 type AccountInfo = {
