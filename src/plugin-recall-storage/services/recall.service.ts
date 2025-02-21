@@ -5,6 +5,7 @@ import { ListResult } from '@recallnet/sdk/bucket';
 import { RecallClient, walletClientFromPrivateKey } from '@recallnet/sdk/client';
 import { CreditAccount } from '@recallnet/sdk/credit';
 import { Address, Hex, parseEther, TransactionReceipt } from 'viem';
+import { createHash } from 'crypto';
 import { ICotAgentRuntime } from '../../types/index.ts';
 import { mintSpgWithPilTerms } from '../../story/simpleMintAndRegisterSpg.ts';
 
@@ -302,6 +303,7 @@ export class RecallService extends Service {
       }
 
       elizaLogger.info(`Successfully stored batch at key: ${nextLogKey}`);
+      await this.registerBatchAsIP(bucketAddress, nextLogKey, batchData, timestamp);
       return nextLogKey;
     } catch (error) {
       if (error.message.includes('timed out')) {
