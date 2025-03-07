@@ -1,5 +1,5 @@
 {
-  "name": "recall-agent-starter",
+  "name": "recall-starter-story-poc",
   "version": "0.1.8-alpha.1",
   "main": "src/index.ts",
   "type": "module",
