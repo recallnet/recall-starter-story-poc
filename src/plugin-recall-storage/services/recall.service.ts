@@ -14,12 +14,20 @@ import { CreditAccount } from '@recallnet/sdk/credit';
 import { Address, Hex, parseEther, TransactionReceipt } from 'viem';
 import { createHash } from 'crypto';
 import { mintSpgWithPilTerms } from '../../story/simpleMintAndRegisterSpg.ts';
+import fs from 'fs';
+import dotenv from 'dotenv';
+import path from 'path';
+import { createSpgCollection } from '../../story/utils/createSpgNftCollection.ts';
 import {
   getUnsyncedLogsPostgres,
   getUnsyncedLogsSqlite,
   markLogsAsSyncedPostgres,
   markLogsAsSyncedSqlite,
 } from '../utils.ts';
+
+dotenv.config(); // Load existing environment variables
+
+const ENV_PATH = path.resolve(process.cwd(), '.env');
 
 type Result<T = unknown> = {
   result: T;
@@ -161,6 +169,33 @@ export class RecallService extends Service {
       throw error;
     }
   }
+
+  /**
+   * Updates the .env file with the SPG NFT contract address if it doesn't exist.
+   */
+  async updateEnvFile() {
+    if (!process.env.SPG_NFT_CONTRACT) {
+      const nftCollectionAddress = await createSpgCollection();
+
+      // Read the existing .env file
+      let envContent = fs.existsSync(ENV_PATH) ? fs.readFileSync(ENV_PATH, 'utf8') : '';
+
+      // Check if the variable already exists and update it, otherwise append it
+      if (envContent.includes('SPG_NFT_CONTRACT=')) {
+        envContent = envContent.replace(
+          /SPG_NFT_CONTRACT=.*/g,
+          `SPG_NFT_CONTRACT=${nftCollectionAddress}`,
+        );
+      } else {
+        envContent += `\nSPG_NFT_CONTRACT=${nftCollectionAddress}\n`;
+      }
+
+      // Write back to the .env file
+      fs.writeFileSync(ENV_PATH, envContent);
+
+      return nftCollectionAddress;
+    }
+  }
   /**
    * Utility function to handle timeouts for async operations.
    * @param promise The promise to execute.
@@ -274,7 +309,10 @@ export class RecallService extends Service {
           contentHash: `0x${contentHash}`,
         },
       };
-
+      if (!process.env.SPG_NFT_CONTRACT) {
+        const collectionAddress = await this.updateEnvFile();
+        process.env.SPG_NFT_CONTRACT = collectionAddress;
+      }
       const response = await mintSpgWithPilTerms(ipMetadata);
       elizaLogger.info(`Successfully registered batch ${batchKey} as IP with ID: ${response.ipId}`);
     } catch (error) {

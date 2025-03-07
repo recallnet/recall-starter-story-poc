@@ -1,4 +1,4 @@
-# Recall AI Agent Starter Kit
+# Recall AI Agent Starter Kit + Story Integration
 
 An Eliza starter kit that packages Recall functionality into an Eliza plugin, allowing agents to:
 
@@ -20,6 +20,12 @@ This plugin integrates **Recall storage** with Eliza AI agents, providing persis
 4. **Efficient Storage Management:** The agent can create, list, add, and retrieve objects within Recall buckets.
 
 This starter kit also uses a modified `DirectClient` specifically built to extract chain-of-thought logs.
+
+### Story Integration
+
+This repository also uses Story Protocol to create an SPG NFT collection (if one has not already been created), and mints Recall chain-of-thought logs as collection NFTs. 
+
+In order to use this integration, you will need to head to the [Story Aeneid Testnet Faucet](https://cloud.google.com/application/web3/faucet/story/aeneid) and receive testnet tokens, and ensure that the private key from the same address that received the tokens is used for the `STORY_PRIVATE_KEY` env variable (detailed below).
 
 ### **🔄 Flow of Operations**
 
@@ -149,6 +155,7 @@ OPENAI_API_KEY="your-api-key"
 # For Story Protocol
 STORY_PRIVATE_KEY=
 PINATA_JWT=
+SPG_NFT_CONTRACT= # automatically created for you if not provided
 ```
 
 Optionally, you can override the CoT sync period, batch size, and network:

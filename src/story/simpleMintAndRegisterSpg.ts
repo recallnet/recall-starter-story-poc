@@ -7,9 +7,7 @@ import { getClient } from './utils/utils.ts';
 
 export const mintSpgWithPilTerms = async function (metadata: GenerateIpMetadataParam) {
   try {
-    const spgNftContract =
-      (process.env.SPG_NFT_CONTRACT as `0x${string}`) ||
-      '0xb29d1ab350f9353ED2f15cBc80dfB8E6EEA52636';
+    const spgNftContract = process.env.SPG_NFT_CONTRACT as `0x${string}`;
 
     const { client } = getClient();
     //
